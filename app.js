@@ -2,15 +2,15 @@
 const express = require("express");
 const cors = require("cors"); // to connect with frontend
 const path = require("path");
-// const passport = require("passport");
+const passport = require("passport");
 const morgan = require("morgan");
-// const logger = require("./middleware/logger");
-// const errorHandler = require("./middleware/errorHandler");
-//                   DB
+const logger = require("./middleware/logger");
+const errorHandler = require("./middleware/errorHandler");
+DB;
 const connectDB = require("./db/database");
 //                 Passport
-// const { localStrategy, jwtStrategy } = require("./middleware/passport");
-//                 express
+const { localStrategy, jwtStrategy } = require("./middleware/passport");
+express;
 const app = express();
 app.use(express.json());
 //                 Middleware
@@ -18,9 +18,9 @@ app.use(cors());
 app.use(morgan("dev"));
 
 // Passport
-// app.use(passport.initialize());
-// passport.use(localStrategy);
-// passport.use(jwtStrategy);
+app.use(passport.initialize());
+passport.use(localStrategy);
+passport.use(jwtStrategy);
 
 //              handling error
 app.use((req, res, next) => {
