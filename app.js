@@ -6,6 +6,10 @@ const passport = require("passport");
 const morgan = require("morgan");
 const logger = require("./middleware/logger");
 const errorHandler = require("./middleware/errorHandler");
+//               Routes
+app.use("/media", express.static(path.join(__dirname, "media")));
+const userRoutes = require("./apis/users/users.routes");
+app.use("/api", userRoutes);
 //                   DB
 const connectDB = require("./db/database");
 //                 Passport
@@ -32,9 +36,6 @@ passport.use(jwtStrategy);
 app.use((req, res, next) => {
   res.status(404).json({ message: "Path not found" });
 });
-
-//               Routes
-app.use("/media", express.static(path.join(__dirname, "media")));
 
 app.use(errorHandler);
 connectDB(); //connect to the database
