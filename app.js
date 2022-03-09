@@ -32,14 +32,15 @@ app.use(passport.initialize());
 passport.use(localStrategy);
 passport.use(jwtStrategy);
 
+//Routes
+app.use("/api", userRoutes);
+app.use("/media", express.static(path.join(__dirname, "media")));
 //              handling error
 app.use((req, res, next) => {
   res.status(404).json({ message: "Path not found" });
 });
-//Routes
-app.use("/api", userRoutes);
-app.use("/media", express.static(path.join(__dirname, "media")));
 app.use(errorHandler);
+
 connectDB(); //connect to the database
 const PORT = 8001; //connection to a host
 app.listen(PORT, () => console.log(`Application running on localhost:${PORT}`));

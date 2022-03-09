@@ -51,11 +51,11 @@ const UserSchema = Schema({
   },
 
   account: {
-    type: number,
+    type: Number,
     unique: true,
   },
   amount: {
-    type: number,
+    type: Number,
   },
   // profile: { type: mongoose.Schema.Types.ObjectId, ref: "Profile" },
 });
