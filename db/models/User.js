@@ -1,5 +1,8 @@
 const { model, Schema } = require("mongoose");
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3e4b2a7bc54d6ce28ef56fe5a6c97571d9cc9187
 const UserSchema = Schema({
   firstname: {
     type: String,
@@ -50,6 +53,15 @@ const UserSchema = Schema({
     required: true,
     unique: true,
   },
+
+  account: {
+    type: number,
+    unique: true,
+  },
+  amount: {
+    type: number,
+  },
+  // profile: { type: mongoose.Schema.Types.ObjectId, ref: "Profile" },
 });
 
 module.exports = model("User", UserSchema);
