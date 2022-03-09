@@ -51,7 +51,7 @@ const UserSchema = Schema({
     unique: true,
   },
 
-  profile: { type: mongoose.Schema.Types.ObjectId, ref: "Profile" },
+  // profile: { type: mongoose.Schema.Types.ObjectId, ref: "Profile" },
 });
 
 module.exports = model("User", UserSchema);
