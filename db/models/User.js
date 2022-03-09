@@ -1,5 +1,4 @@
 const { model, Schema } = require("mongoose");
-const mongoose = require("mongoose");
 const UserSchema = Schema({
   firstname: {
     type: String,
@@ -51,6 +50,13 @@ const UserSchema = Schema({
     unique: true,
   },
 
+  account: {
+    type: number,
+    unique: true,
+  },
+  amount: {
+    type: number,
+  },
   // profile: { type: mongoose.Schema.Types.ObjectId, ref: "Profile" },
 });
 
