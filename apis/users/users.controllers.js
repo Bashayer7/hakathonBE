@@ -7,6 +7,7 @@ const generateToken = (user) => {
   const payload = {
     _id: user._id,
     username: user.username,
+    account: user.account,
     exp: Date.now() + JWT_EXPIRATION_MS, // number in milliseconds
   };
 
